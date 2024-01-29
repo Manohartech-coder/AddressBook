@@ -63,4 +63,17 @@ public class Person {
     public void setPhNo(int phNo) {
         this.phNo = phNo;
     }
+
+    @Override
+    public String toString() {
+        return "Person{" +
+                "firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", city='" + city + '\'' +
+                ", State='" + State + '\'' +
+                ", email='" + email + '\'' +
+                ", zip=" + zip +
+                ", phNo=" + phNo +
+                '}';
+    }
 }

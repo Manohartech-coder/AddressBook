@@ -28,4 +28,31 @@ public class AddressBookService {
         p.setZip(z);
 
     }
+    public void updateValue(Person p){
+        Scanner sc= new Scanner(System.in);
+        String u=sc.next();
+        System.out.println("Update First name");
+        String fn=sc.next();
+        p.setFirstName(fn);
+        System.out.println("Update Last name");
+        String ln=sc.next();
+        p.setLastName(ln);
+        System.out.println("Update City name");
+        String c=sc.next();
+        p.setCity(c);
+        System.out.println("Update State name");
+        String s=sc.next();
+        p.setState(s);
+        System.out.println("Update Email");
+        String e=sc.next();
+        p.setEmail(e);
+        System.out.println("Enter phNo");
+        int ph=sc.nextInt();
+        p.setPhNo(ph);
+        System.out.println("Update Zip");
+        int z=sc.nextInt();
+        p.setZip(z);
+
+    }
+
 }
