@@ -12,5 +12,7 @@ public class Main {
         System.out.println(r1.book.toString());
         r1.editC("Manu");
         System.out.println(r1.book.toString());
+        r1.deleteC("Manu");
+        System.out.println(r1.book.toString());
     }
 }

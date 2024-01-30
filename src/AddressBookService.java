@@ -30,7 +30,6 @@ public class AddressBookService {
     }
     public void updateValue(Person p){
         Scanner sc= new Scanner(System.in);
-        String u=sc.next();
         System.out.println("Update First name");
         String fn=sc.next();
         p.setFirstName(fn);

@@ -17,5 +17,15 @@ public class AdressBookRec {
             }
         }
     }
+    public void deleteC(String name){
+        for(Map.Entry<Integer,Person>d:book.entrySet()){
+            int key=d.getKey();
+            Person pd=d.getValue();
+            String s=pd.getFirstName();
+            if(s.equalsIgnoreCase(name)){
+                book.remove(key);
+            }
+        }
+    }
 
 }
