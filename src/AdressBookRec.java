@@ -4,6 +4,9 @@ public class AdressBookRec {
 
     HashMap<Integer,Person> book= new HashMap<Integer,Person>();
 
+    public void addPerson(int id, Person person){
+        book.put(id,person);
+    }
 
     public void editC(String name){
         for(Map.Entry<Integer,Person> e: book.entrySet() ){
@@ -18,14 +21,16 @@ public class AdressBookRec {
         }
     }
     public void deleteC(String name){
-        for(Map.Entry<Integer,Person>d:book.entrySet()){
-            int key=d.getKey();
-            Person pd=d.getValue();
-            String s=pd.getFirstName();
-            if(s.equalsIgnoreCase(name)){
-                book.remove(key);
+        Iterator<Map.Entry<Integer, Person>> iterator = book.entrySet().iterator();
+        while (iterator.hasNext()) {
+            Map.Entry<Integer, Person> entry = iterator.next();
+            Person person = entry.getValue();
+
+            if (person.getFirstName().equals(name)) {
+                iterator.remove();
             }
         }
+
     }
 
 }
