@@ -1,5 +1,13 @@
 import java.util.*;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 public class AddressBookService {
+    private static final String EMAIL_REGEX =
+            "^[a-zA-Z0-9_+&*-]+(?:\\.[a-zA-Z0-9_+&*-]+)*@" +
+                    "(?:[a-zA-Z0-9-]+\\.)+[a-zA-Z]{2,7}$";
+    private static final String Phno_Regex="^[6-9]{1}[0-9]{9}";
+    private static final String Pin_Regex="^[0-9]{6}";
     public String display(Person p){
         return p.getFirstName()+" "+p.getLastName()+" "+p.getCity()+" "+p.getState()+" "+p.getEmail()+" "+p.getPhNo()+" "+p.getZip();
     }
@@ -19,13 +27,38 @@ public class AddressBookService {
         p.setState(s);
         System.out.println("Enter Email");
         String e=sc.next();
-        p.setEmail(e);
+        Pattern pattern = Pattern.compile(EMAIL_REGEX);
+        Matcher matcher = pattern.matcher(e);
+        while(!matcher.matches()){
+            System.out.println("Enter ur Email again");
+            String z=sc.next();
+            p.setEmail(z);
+            matcher=pattern.matcher(z);
+
+        }
         System.out.println("Enter phNo");
-        int ph=sc.nextInt();
-        p.setPhNo(ph);
+        String ph=sc.next();
+        Pattern patterns = Pattern.compile(Phno_Regex);
+        Matcher matchers = patterns.matcher(ph);
+        while(!matchers.matches()){
+            System.out.println("Enter ur phno again");
+            String phone=sc.next();
+            p.setEmail(phone);
+            matchers=patterns.matcher(phone);
+
+        }
+
         System.out.println("Enter Zip");
-        int z=sc.nextInt();
-        p.setZip(z);
+        String z=sc.next();
+        Pattern patter = Pattern.compile(Pin_Regex);
+        Matcher matche = patter.matcher(z);
+        while(!matche.matches()){
+            System.out.println("Enter ur pincode again");
+            String pin=sc.next();
+            p.setEmail(pin);
+            matche=patter.matcher(pin);
+        }
+
 
     }
     public void updateValue(Person p){
@@ -46,10 +79,10 @@ public class AddressBookService {
         String e=sc.next();
         p.setEmail(e);
         System.out.println("Enter phNo");
-        int ph=sc.nextInt();
+        String ph=sc.nextLine();
         p.setPhNo(ph);
         System.out.println("Update Zip");
-        int z=sc.nextInt();
+        String z=sc.nextLine();
         p.setZip(z);
 
     }

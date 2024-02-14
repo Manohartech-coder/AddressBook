@@ -1,3 +1,5 @@
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class Person {
     private String firstName;
@@ -5,8 +7,10 @@ public class Person {
     private String city;
     private String State;
     private String email;
-    private int zip;
-    private int phNo;
+    private String zip;
+    private String phNo;
+
+
 
     public String getFirstName() {
         return firstName;
@@ -45,22 +49,23 @@ public class Person {
     }
 
     public void setEmail(String email) {
-        this.email = email;
+        this.email=email;
+
     }
 
-    public int getZip() {
+    public String getZip() {
         return zip;
     }
 
-    public void setZip(int zip) {
+    public void setZip(String zip) {
         this.zip = zip;
     }
 
-    public int getPhNo() {
+    public String getPhNo() {
         return phNo;
     }
 
-    public void setPhNo(int phNo) {
+    public void setPhNo(String phNo) {
         this.phNo = phNo;
     }
 
